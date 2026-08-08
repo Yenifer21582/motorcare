@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotorCare</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="izquierda">
+
+        <img src="{{ url_for('static', filename='img/destornillador.jpeg') }}" class="logo">
+
+        <h2 class="logo-texto">
+            Motor<span>Care</span>
+        </h2>
+
+        <h4>MANTENIMIENTO PREVENTIVO</h4>
+
+        <h2 class="titulo-registro">
+            Recuperar contraseña
+        </h2>
+
+        <p class="subtitulo-registro">
+            Ingresa tu correo electrónico y te ayudaremos a recuperar el acceso a tu cuenta.
+        </p>
+
+        <div class="linea"></div>
+
+        <p class="beneficio-registro">✔ Recupera el acceso a tu cuenta.</p>
+<p class="beneficio-registro">✔ Protege la información de tus vehículos.</p>
+<p class="beneficio-registro">✔ Continúa utilizando MotorCare con seguridad.</p>
+    </div>
+
+    <div class="derecha">
+
+        <h2>Recuperar contraseña</h2>
+
+        <p class="texto">
+            Escribe el correo con el que te registraste.
+        </p>
+
+        <form action="/olvidar" method="POST">
+
+    <label>Correo electrónico</label>
+
+    <input
+        type="email"
+        name="correo"
+        placeholder="Ingresa tu correo electrónico"
+        required>
+
+    <label>Nueva contraseña</label>
+
+    <input
+        type="password"
+        name="nueva_contrasena"
+        placeholder="Ingresa la nueva contraseña"
+        required>
+
+    <label>Confirmar contraseña</label>
+
+    <input
+        type="password"
+        name="confirmar_contrasena"
+        placeholder="Confirma la nueva contraseña"
+        required>
+
+    <button type="submit">
+        Cambiar contraseña
+    </button>
+
+</form>

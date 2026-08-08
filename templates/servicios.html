@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotorCare</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo-dashboard">
+
+            <img src="{{ url_for('static', filename='img/motor care logo.png') }}" class="logo-menu">
+
+            <h2 class="logo-texto">
+                Motor<span>Care</span>
+            </h2>
+
+            <p>MANTENIMIENTO PREVENTIVO</p>
+
+        </div>
+
+        <nav>
+<a href="/dashboard">
+        <i class="fa-solid fa-house"></i>
+        Inicio
+    </a>
+
+    <a href="/servicios">
+        <i class="fa-solid fa-car"></i>
+        Servicios
+    </a>
+
+    <a href="/tipos-servicio">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        Tipos de vehiculo
+    </a>
+
+    <a href="/agenda">
+        <i class="fa-solid fa-calendar"></i>
+        Agenda tu cita
+    </a>
+
+    <a href="/consejos">
+        <i class="fa-solid fa-lightbulb"></i>
+        Consejos
+    </a>
+
+</nav>
+
+        <div class="cerrar">
+
+            <a href="/cerrar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="contenido">
+
+    <div class="topbar">
+
+        <div class="estado-sistema">
+
+            <div class="icono-estado">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+                <h3>Sistema activo</h3>
+                <p>Todos los servicios disponibles.</p>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+<section class="servicios">
+
+    <h1>Nuestros Servicios</h1>
+
+    <p class="subtitulo-servicios">
+        Ofrecemos mantenimiento preventivo y servicios especializados para carros, motos y motores fuera de borda.
+    </p>
+
+    <div class="contenedor-servicios">
+
+        <!-- Servicio 1 -->
+        <div class="card-servicio">
+
+        <img src="{{ url_for('static', filename='img/lavadoc.jpg') }}" alt="Lavado de carros">
+
+            <h3>Lavado de carros</h3>
+
+            <p>Lavado completo con productos de alta calidad para proteger la pintura de tu vehículo.</p>
+
+            <h4>$25.000</h4>
+
+            <a href="/agenda" class="btn-servicio">Solicitar</a>
+
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="card-servicio">
+
+            <img src="{{ url_for('static', filename='img/lavadom.jpg') }}" alt="Lavado de motos">
+
+            <h3>Lavado de motos</h3>
+
+            <p>Limpieza profesional para conservar tu motocicleta en excelentes condiciones.</p>
+
+            <h4>$15.000</h4>
+
+            <a href="/agenda" class="btn-servicio">Solicitar</a>
+
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="card-servicio">
+
+            <img src="{{ url_for('static', filename='img/lavadob.jpg') }}" alt="Lavado de motores fuera de borda">
+
+            <h3>Revision de motores</h3>
+
+            <p>Mantenimiento y limpieza especializada para motores marinos.</p>
+
+            <h4>$40.000</h4>
+
+            <a href="/agenda" class="btn-servicio">Solicitar</a>
+
+        </div>
+<!-- Servicio 4 -->
+<div class="card-servicio">
+
+<img src="{{ url_for('static', filename='img/aceite.jpg') }}" alt="Cambio de aceite">
+    <h3>Cambio de aceite</h3>
+
+    <p>Cambio de aceite y revisión de niveles para un mejor rendimiento del motor.</p>
+
+    <h4>$45.000</h4>
+
+    <a href="/agenda" class="btn-servicio">Solicitar</a>
+
+</div>
+
+<!-- Servicio 5 -->
+<div class="card-servicio">
+
+    <img src="{{ url_for('static', filename='img/filtro.jpg') }}" alt="Cambio de filtro">
+    <h3>Cambio de filtros</h3>
+
+    <p>Reemplazo de filtros de aire, aceite y combustible.</p>
+
+    <h4>$30.000</h4>
+
+    <a href="/agenda" class="btn-servicio">Solicitar</a>
+
+</div>
+
+<!-- Servicio 6 -->
+<div class="card-servicio">
+
+    <img src="{{ url_for('static', filename='img/frenos.jpg') }}" alt="Revisión de frenos">
+    <h3>Revisión de frenos</h3>
+
+    <p>Inspección y ajuste del sistema de frenos para mayor seguridad.</p>
+
+    <h4>$50.000</h4>
+
+    <a href="/agenda" class="btn-servicio">Solicitar</a>
+
+</div>
+    </div>
+
+</section>
+<footer class="footer">
+    <p>
+        © 2026 <strong>MotorCare</strong> | Mantenimiento preventivo de vehículos.
+    </p>
+
+    <p>
+        Cuida hoy tu vehículo, conduce tranquilo mañana.
+    </p>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</div>
+</div> 
+</body>
+</html>

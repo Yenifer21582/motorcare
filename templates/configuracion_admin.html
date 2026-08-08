@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotorCare</title>
+
+   <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo-dashboard">
+
+            <img src="{{ url_for('static', filename='img/motor care logo.png') }}" class="logo-menu">
+
+            <h2 class="logo-texto">
+                Motor<span>Care</span>
+            </h2>
+
+            <p>PANEL ADMINISTRADOR</p>
+
+        </div>
+
+        <nav>
+
+            <a href="/dashboard_admin">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="/usuarios">
+                <i class="fa-solid fa-address-card"></i>
+                Usuarios
+            </a>
+
+            <a href="/citas">
+                <i class="fa-solid fa-calendar-check"></i>
+                Citas
+            </a>
+
+            <a href="/servicios_admin">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Servicios
+            </a>
+
+            <a href="/configuracion_admin" class="activo">
+                <i class="fa-solid fa-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+        <div class="cerrar">
+
+            <a href="/cerrar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="contenido">
+
+        <h1>
+            <i class="fa-solid fa-gear"></i>
+            Configuración
+        </h1>
+
+        <p class="subtitulo-dashboard">
+            Administra la información y las opciones principales del panel de administración de MotorCare.
+        </p>
+        <div class="tarjetas-config">
+
+    <div class="configuracion-card">
+
+        <div class="config-info">
+
+            <span class="icono-perfil">
+                <i class="fa-solid fa-user"></i>
+            </span>
+
+            <h2>Mi perfil</h2>
+
+            <p>
+                Administra la información del administrador de MotorCare,
+                actualiza tus datos personales y mantén tu perfil siempre actualizado.
+            </p>
+
+        </div>
+
+        <div class="config-img">
+
+            <img src="{{ url_for('static', filename='img/perfil.png') }}" alt="Perfil">
+
+        </div>
+
+    </div>
+
+
+    <div class="configuracion-card">
+
+        <div class="config-info">
+
+            <span class="icono-seguridad">
+                <i class="fa-solid fa-shield-halved"></i>
+            </span>
+
+            <h2>Seguridad</h2>
+
+            <p>
+                Cambia tu contraseña y protege el acceso al panel de administración
+                para mantener segura toda la información.
+            </p>
+
+        </div>
+
+        <div class="config-img">
+
+            <img src="{{ url_for('static', filename='img/seguridad.png') }}" alt="Seguridad">
+
+        </div>
+
+    </div>
+
+
+    <div class="configuracion-card">
+
+        <div class="config-info">
+
+            <span class="icono-notificaciones">
+                <i class="fa-solid fa-bell"></i>
+            </span>
+
+            <h2>Notificaciones</h2>
+
+            <p>
+                Configura las notificaciones del sistema y recibe avisos sobre
+                citas, usuarios y actividades importantes.
+            </p>
+
+        </div>
+
+        <div class="config-img">
+
+            <img src="{{ url_for('static', filename='img/notificaciones.png') }}" alt="Notificaciones">
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

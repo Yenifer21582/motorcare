@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotorCare</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="izquierda">
+
+        <img src="{{ url_for('static', filename='img/destornillador.jpeg') }}" class="logo">
+
+        <h2 class="logo-texto">
+            Motor<span>Care</span>
+        </h2>
+
+        <h4>MANTENIMIENTO PREVENTIVO</h4>
+
+        <h1>
+            Cuida tu motor,<br>
+            <span>alarga su vida.</span>
+        </h1>
+
+        <div class="linea"></div>
+
+        <p>
+            Guías, consejos, recordatorios y calendarios de mantenimiento para carros, motos y motores fuera de borda.
+        </p>
+
+        <div class="vehiculos">
+
+            <img src="{{ url_for('static', filename='img/carrro deportivo.jpg') }}" class="carro">
+
+            <img src="{{ url_for('static', filename='img/Moto negra2.jpg') }}" class="moto">
+
+            <img src="{{ url_for('static', filename='img/Motor negra2.jpg') }}" class="motor">
+
+        </div>
+
+    </div>
+
+    <div class="derecha">
+
+        <h2>Inicio de sesión</h2>
+
+        <p class="texto">
+            Ingresa tus datos para continuar cuidando tu motor.
+        </p>
+
+        <form action="/" method="POST">
+
+            <label>Correo electrónico</label>
+
+           <input
+             type="email"
+              name="correo"
+    placeholder="Ingresa tu correo electrónico"
+      required>
+
+            <label>Contraseña</label>
+
+            <input
+    type="password"
+    name="contrasena"
+    placeholder="Ingresa tu contraseña"
+    required>
+            <a href="/olvidar" class="olvido">
+                ¿Olvidaste tu contraseña?
+            </a>
+<div class="grupo">
+    <label for="rol">Rol</label>
+
+    <select name="rol" id="rol" required>
+        <option value="">Seleccione un rol</option>
+        <option value="cliente">Cliente</option>
+        <option value="admin">Administrador</option>
+    </select>
+</div>
+            <button type="submit">
+                Iniciar sesión
+            </button>
+
+        </form>
+
+        <p class="registro">
+            ¿No tienes una cuenta?
+            <a href="/registro">Regístrate</a>
+        </p>
+
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+const parametros = new URLSearchParams(window.location.search);
+
+if (parametros.get("registro") === "ok") {
+    Swal.fire({
+        icon: "success",
+        title: "¡Registro exitoso!",
+        text: "Tu cuenta ha sido creada correctamente. Ya puedes iniciar sesión.",
+        confirmButtonText: "Aceptar"
+    });
+
+    window.history.replaceState({}, document.title, "/");
+
+
+}
+
+if (parametros.get("login") === "error") {
+    Swal.fire({
+        icon: "error",
+        title: "Acceso denegado",
+        text: "El correo o la contraseña son incorrectos. Verifica tus datos e inténtalo nuevamente.",
+        confirmButtonText: "Intentar de nuevo"
+    });
+
+    window.history.replaceState({}, document.title, "/");
+}
+
+if (parametros.get("mensaje") === "logout") {
+    Swal.fire({
+        icon: "success",
+        title: "¡Hasta pronto!",
+        text: "Has cerrado sesión correctamente. Gracias por utilizar MotorCare.",
+        confirmButtonText: "Aceptar"
+    });
+
+    window.history.replaceState({}, document.title, "/");
+}
+
+
+if (parametros.get("mensaje") === "contrasena_actualizada") {
+    Swal.fire({
+        icon: "success",
+        title: "¡Contraseña actualizada!",
+        text: "Tu contraseña fue cambiada correctamente. Ya puedes iniciar sesión.",
+        confirmButtonText: "Aceptar"
+    });
+
+    window.history.replaceState({}, document.title, "/");
+}
+
+if (parametros.get("mensaje") === "Debe iniciar sesión") {
+    Swal.fire({
+        icon: "warning",
+        title: "Acceso restringido",
+        text: "Debes iniciar sesión para acceder a esta página.",
+        confirmButtonText: "Aceptar"
+    });
+
+    window.history.replaceState({}, document.title, "/");
+}
+
+if (parametros.get("mensaje") === "Debe iniciar sesión") {
+    Swal.fire({
+        icon: "warning",
+        title: "Acceso restringido",
+        text: "Debes iniciar sesión para acceder a esta página.",
+        confirmButtonText: "Aceptar"
+    });
+
+    window.history.replaceState({}, document.title, "/");
+}
+
+</script>
+
+</script>
+
+
+</body>
+</html>

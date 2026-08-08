@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotorCare</title>
+
+    <link rel="icon" type="image/png"
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/estilos.css') }}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo-dashboard">
+
+            <img src="{{ url_for('static', filename='img/motor care logo.png') }}"
+                 class="logo-menu">
+
+            <h2 class="logo-texto">
+                Motor<span>Care</span>
+            </h2>
+
+            <p>PANEL ADMINISTRADOR</p>
+
+        </div>
+
+        <nav>
+
+            <a href="/dashboard_admin">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="/usuarios">
+                <i class="fa-solid fa-users"></i>
+                Usuarios
+            </a>
+
+            <a href="/citas" class="activo">
+                <i class="fa-solid fa-calendar-check"></i>
+                Citas
+            </a>
+
+            <a href="/servicios_admin">
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+    Servicios
+</a>
+
+            <a href="/configuracion_admin">
+                <i class="fa-solid fa-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+        <div class="cerrar">
+
+            <a href="/cerrar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="contenido">
+        <h1>
+    <i class="fa-solid fa-calendar-check"></i>
+    Gestión de Citas
+</h1>
+
+<p class="subtitulo-dashboard">
+    Consulta todas las citas registradas por los clientes de MotorCare.
+</p>
+
+<div class="cards-citas">
+
+    <div class="card-cita azul">
+        <i class="fa-solid fa-calendar-days"></i>
+
+        <div>
+            <h4>Total de citas</h4>
+            <h2>{{ citas|length }}</h2>
+            <p>Citas registradas.</p>
+        </div>
+    </div>
+
+    <div class="card-cita verde">
+        <i class="fa-solid fa-circle-check"></i>
+
+        <div>
+            <h4>Confirmadas</h4>
+            <h2>9</h2>
+            <p>Citas aprobadas.</p>
+        </div>
+    </div>
+
+    <div class="card-cita amarillo">
+        <i class="fa-solid fa-clock"></i>
+
+        <div>
+            <h4>Pendientes</h4>
+            <h2>0</h2>
+            <p>Por atender.</p>
+        </div>
+    </div>
+
+    <div class="card-cita rojo">
+        <i class="fa-solid fa-circle-xmark"></i>
+
+        <div>
+            <h4>Canceladas</h4>
+            <h2>0</h2>
+            <p>No realizadas.</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="tabla-citas">
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Cliente</th>
+                <th>Correo</th>
+                <th>Vehículo</th>
+                <th>Servicio</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for cita in citas %}
+
+            <tr>
+
+                <td>{{ cita.nombre }}</td>
+                <td>{{ cita.correo }}</td>
+                <td>{{ cita.vehiculo }}</td>
+                <td>{{ cita.servicio }}</td>
+                <td>{{ cita.fecha }}</td>
+                <td>{{ cita.hora }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+</div> <!-- contenido -->
+
+</div> <!-- dashboard -->
+
+</body>
+</html>

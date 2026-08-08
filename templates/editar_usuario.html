@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+<div class="contenedor-editar">
+
+    <div class="card-editar">
+
+        <div class="avatar-editar">
+            {{ usuario.nombre[0]|upper }}
+        </div>
+
+        <h2>Editar Usuario</h2>
+
+        <form method="POST">
+
+            <label>Nombre</label>
+            <input type="text" name="nombre" value="{{ usuario.nombre }}" required>
+
+            <label>Correo</label>
+            <input type="email" name="correo" value="{{ usuario.correo }}" required>
+
+            <label>Rol</label>
+
+            <select name="rol">
+
+                <option value="cliente"
+                {% if usuario.rol=="cliente" %}selected{% endif %}>
+                    Cliente
+                </option>
+
+                <option value="admin"
+                {% if usuario.rol=="admin" %}selected{% endif %}>
+                    Administrador
+                </option>
+
+            </select>
+
+            <div class="botones-editar">
+
+                <a href="/usuarios" class="btn-volver">
+                    Volver
+                </a>
+
+                <button type="submit" class="btn-guardar">
+                    Guardar cambios
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

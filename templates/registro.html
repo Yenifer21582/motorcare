@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MotorCare</title>
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="izquierda">
+
+        <img src="{{ url_for('static', filename='img/destornillador.jpeg') }}" class="logo">
+
+        <h2 class="logo-texto">
+            Motor<span>Care</span>
+        </h2>
+
+        <h4>MANTENIMIENTO PREVENTIVO</h4>
+
+        <h2 class="titulo-registro">
+            Únete a MotorCare
+        </h2>
+
+        <p class="subtitulo-registro">
+            Crea tu cuenta y comienza a cuidar tu vehículo.
+        </p>
+
+        <div class="linea"></div>
+
+       <p class="beneficio-registro">✔ Agenda tus mantenimientos.</p>
+<p class="beneficio-registro">✔ Recibe recordatorios importantes.</p>
+<p class="beneficio-registro">✔ Accede a guías y consejos útiles.</p>
+    </div>
+
+    <div class="derecha">
+
+        <h2>Crear cuenta</h2>
+
+        <p class="texto">
+            Completa la información para crear tu cuenta en MotorCare.
+        </p>
+
+        <form action="/registro" method="POST">
+
+            <label>Nombre completo</label>
+            <input
+                type="text"
+                name="nombre"
+                placeholder="Ingresa tu nombre completo"
+                required>
+
+            <label>Correo electrónico</label>
+            <input
+                type="email"
+                name="correo"
+                placeholder="Ingresa tu correo electrónico"
+                required>
+
+            <label>Contraseña</label>
+            <input
+                type="password"
+                name="contrasena"
+                placeholder="Crea una contraseña"
+                required>
+
+            <label>Confirmar contraseña</label>
+            <input
+                type="password"
+                name="confirmar"
+                placeholder="Confirma tu contraseña"
+                required>
+
+            <button type="submit">
+                Registrarme
+            </button>
+
+        </form>
+
+        <p class="registro">
+            ¿Ya tienes una cuenta?
+            <a href="/">Iniciar sesión</a>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotorCare</title>
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo-dashboard">
+
+            <img src="{{ url_for('static', filename='img/motor care logo.png') }}" class="logo-menu">
+
+            <h2 class="logo-texto">
+                Motor<span>Care</span>
+            </h2>
+
+            <p>PANEL ADMINISTRADOR</p>
+
+        </div>
+
+        <nav>
+
+            <a href="/dashboard_admin">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="/usuarios" class="activo">
+                <i class="fa-solid fa-users"></i>
+                Usuarios
+            </a>
+
+            <a href="/citas">
+    <i class="fa-solid fa-calendar-check"></i>
+    Citas
+</a>
+
+            <a href="/servicios_admin">
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+    Servicios
+</a>
+
+            <a href="/configuracion_admin">
+                <i class="fa-solid fa-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+        <div class="cerrar">
+
+            <a href="/cerrar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="contenido">
+
+        <h1>
+    <i class="fa-solid fa-users"></i>
+    Gestión de Usuarios
+</h1>
+
+<p class="subtitulo-dashboard">
+    Administra los usuarios registrados en MotorCare.
+</p>
+
+<div class="dashboard-cards">
+
+    <div class="dashboard-card azul">
+        <div class="icono-card">
+            <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div class="info-card">
+            <h4 class="titulo-card">Total de usuarios</h4>
+            <h2>{{ total_usuarios }}</h2>
+            <p>Usuarios registrados</p>
+        </div>
+    </div>
+
+    <div class="dashboard-card verde">
+        <div class="icono-card">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="info-card">
+            <h4 class="titulo-card">Clientes</h4>
+            <h2>{{ total_clientes }}</h2>
+            <p>Usuarios clientes</p>
+        </div>
+    </div>
+
+    <div class="dashboard-card morado">
+        <div class="icono-card">
+            <i class="fa-solid fa-user-shield"></i>
+        </div>
+
+        <div class="info-card">
+            <h4 class="titulo-card">Administradores</h4>
+            <h2>{{ total_admin }}</h2>
+            <p>Usuarios administradores</p>
+        </div>
+    </div>
+
+    <div class="dashboard-card amarillo">
+        <div class="icono-card">
+            <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <div class="info-card">
+            <h4 class="titulo-card">Nuevos este mes</h4>
+            <h2>0</h2>
+            <p>Usuarios registrados</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% if mensaje == "editado" %}
+<script>
+Swal.fire({
+    icon: "success",
+    title: "¡Cambios guardados!",
+    text: "El usuario fue actualizado correctamente.",
+    confirmButtonText: "Aceptar"
+});
+</script>
+{% endif %}
+<div class="tabla-contenedor">
+
+    <table class="tabla-usuarios">
+
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for usuario in usuarios %}
+
+            <tr>
+
+                <td class="nombre-usuario">
+
+                    <div class="avatar">
+                        {{ usuario.nombre[0]|upper }}
+                    </div>
+
+                    <span>{{ usuario.nombre }}</span>
+
+                </td>
+
+                <td>{{ usuario.correo }}</td>
+
+                <td>
+
+                    {% if usuario.rol == "admin" %}
+
+                    <span class="rol-admin">
+                        Administrador
+                    </span>
+
+                    {% else %}
+
+                    <span class="rol-cliente">
+                        Cliente
+                    </span>
+
+                    {% endif %}
+
+                </td>
+
+                <td>
+                    <span class="estado-activo">
+                        Activo
+                    </span>
+                </td>
+
+                <td>
+                    <a href="/editar_usuario/{{ usuario.id }}" class="btn-editar">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+</div> <!-- contenido -->
+
+</div> <!-- dashboard -->
+
+</body>
+
+</html>

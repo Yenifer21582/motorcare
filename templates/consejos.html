@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotorCare</title>
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo-dashboard">
+
+            <img src="{{ url_for('static', filename='img/motor care logo.png') }}" class="logo-menu">
+
+            <h2 class="logo-texto">
+                Motor<span>Care</span>
+            </h2>
+
+            <p>MANTENIMIENTO PREVENTIVO</p>
+
+        </div>
+
+        <nav>
+
+            <a href="/dashboard">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="/servicios">
+                <i class="fa-solid fa-car"></i>
+                Servicios
+            </a>
+
+            <a href="/tipos-servicio">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Tipo de vehículo
+            </a>
+
+            <a href="/agenda">
+                <i class="fa-solid fa-calendar"></i>
+                Agenda tu cita
+            </a>
+
+            <a href="/consejos" class="activo">
+                <i class="fa-solid fa-lightbulb"></i>
+                Consejos
+            </a>
+
+        </nav>
+
+        <div class="cerrar">
+
+            <a href="/cerrar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="contenido">
+
+        <section class="consejos">
+
+            <h1>
+                <i class="fa-solid fa-lightbulb"></i>
+                Consejos para el cuidado de tu vehículo
+            </h1>
+
+            <p class="subtitulo-consejos">
+                Sigue estas recomendaciones y mantén tu vehículo siempre en óptimas condiciones.
+            </p>
+
+            <div class="banner-consejos">
+
+                <img src="{{ url_for('static', filename='img/banner-consejos.jpg') }}" class="imagen-banner">
+
+                <div class="texto-banner">
+
+                    <h2>El cuidado hoy evita problemas mañana.</h2>
+
+                    <p>
+                        Un mantenimiento preventivo realizado a tiempo prolonga la vida útil
+                        del vehículo y ayuda a evitar reparaciones costosas.
+                    </p>
+
+                </div>
+
+            </div>
+            <div class="tarjetas-consejos">
+
+                <div class="tarjeta-consejo">
+                    <i class="fa-solid fa-oil-can"></i>
+                    <h3>Revisa el nivel de aceite</h3>
+                    <p>
+                        Verifica el aceite periódicamente para proteger el motor
+                        y evitar desgastes prematuros.
+                    </p>
+                </div>
+
+                <div class="tarjeta-consejo">
+                    <i class="fa-solid fa-car-side"></i>
+                    <h3>Cuida tus llantas</h3>
+                    <p>
+                        Mantén la presión adecuada para mejorar la seguridad y el
+                        rendimiento del vehículo.
+                    </p>
+                </div>
+
+                <div class="tarjeta-consejo">
+                    <i class="fa-solid fa-car-battery"></i>
+                    <h3>Revisa la batería</h3>
+                    <p>
+                        Comprueba su estado para evitar fallas inesperadas y
+                        prolongar su vida útil.
+                    </p>
+                </div>
+
+                <div class="tarjeta-consejo">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <h3>Inspecciona los frenos</h3>
+                    <p>
+                        Revisa pastillas y discos para garantizar una conducción
+                        segura.
+                    </p>
+                </div>
+
+                <div class="tarjeta-consejo">
+                    <i class="fa-solid fa-temperature-half"></i>
+                    <h3>Controla el refrigerante</h3>
+                    <p>
+                        Mantén el nivel adecuado para evitar el sobrecalentamiento
+                        del motor.
+                    </p>
+                </div>
+
+                <div class="tarjeta-consejo">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h3>Mantenimiento preventivo</h3>
+                    <p>
+                        Realiza las revisiones recomendadas para prolongar la vida
+                        útil de tu vehículo.
+                    </p>
+                </div>
+
+            </div>
+
+           <div class="banner-final">
+
+    <h2>Conduce con confianza</h2>
+
+    <p>
+        Cada revisión protege tu vehículo, mejora tu seguridad y ayuda a mantener un excelente rendimiento en cada recorrido.
+    </p>
+
+</div>
+        </section>
+
+        <footer class="footer">
+
+            <p>
+                ©️ 2026 <strong>MotorCare</strong> | Mantenimiento preventivo de vehículos.
+            </p>
+
+            <p>
+                Cuida hoy tu vehículo, conduce tranquilo mañana.
+            </p>
+
+        </footer>
+
+    </div>
+
+</div>
+
+</body>
+</html>

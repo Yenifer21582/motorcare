@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotorCare</title>
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo-dashboard">
+
+                <img src="{{ url_for('static', filename='img/motor care logo.png') }}" class="logo-menu">
+
+                <h2 class="logo-texto">
+                    Motor<span>Care</span>
+                </h2>
+
+                <p>PANEL ADMINISTRADOR</p>
+
+            </div>
+
+            <nav>
+
+                <a href="/dashboard_admin" class="activo">
+                    <i class="fa-solid fa-house"></i>
+                    Inicio
+                </a>
+
+                <a href="/usuarios">
+                    <i class="fa-solid fa-user-group"></i>
+                    Usuarios
+                </a>
+
+                <a href="/citas">
+                   <i class="fa-solid fa-calendar-days"></i>
+                    Citas
+                </a>
+
+                <a href="/servicios_admin">
+                    <i class="fa-solid fa-gears"></i>
+                    Servicios
+                </a>
+
+                <a href="/configuracion_admin">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Configuración
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="cerrar">
+
+            <a href="/cerrar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </aside>
+
+    <main class="contenido">
+
+<div class="topbar">
+
+    <div></div>
+
+    <div class="usuario">
+
+        <img src="{{ url_for('static', filename='img/destornillador.jpeg') }}" class="foto">
+
+        <div class="datos-usuario">
+            <strong>{{ nombre }}</strong>
+            <small>Administrador</small>
+        </div>
+
+    </div>
+
+</div>
+
+<h1>Bienvenido Administrador</h1>
+
+        <p class="subtitulo-dashboard">
+            Hola, {{ nombre }}. Desde este panel podrás administrar los usuarios, las citas y los servicios de MotorCare.
+        </p>
+        <div class="cards-admin">
+
+   <div class="card-admin azul">
+
+    <div class="icono-card">
+        <i class="fa-solid fa-user-group"></i>
+    </div>
+
+        <div class="info-card">
+            <h4>Total de usuarios</h4>
+            <h2>{{ total_usuarios }}</h2>
+            <p>Usuarios registrados en MotorCare.</p>
+        </div>
+
+    </div>
+
+
+    <div class="card-admin verde">
+
+        <div class="icono-card">
+            <i class="fa-solid fa-calendar-check"></i>
+        </div>
+
+        <div class="info-card">
+            <h4>Total de citas</h4>
+            <h2>{{ total_citas }}</h2>
+            <p>Citas registradas en el sistema.</p>
+        </div>
+
+    </div>
+
+
+    <div class="card-admin morado">
+
+        <div class="icono-card">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+        </div>
+
+        <div class="info-card">
+            <h4>Servicios</h4>
+            <h2>6</h2>
+            <p>Servicios disponibles.</p>
+        </div>
+
+    </div>
+
+
+    
+</div>
+<div class="estado-dashboard">
+
+    <div class="estado-icono">
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+    <div class="estado-texto">
+        <h3>Estado del sistema: Todo funcionando correctamente</h3>
+        <p>MotorCare está en línea y todos los módulos están disponibles.</p>
+    </div>
+
+    <span class="estado-online">En línea</span>
+
+</div>
+
+<div class="dashboard-inferior">
+
+    <div class="panel">
+
+        <h3>Acciones rápidas</h3>
+
+        <a href="/usuarios" class="accion">
+            <i class="fa-solid fa-users"></i>
+            <span>Gestionar usuarios</span>
+        </a>
+
+        <a href="/citas" class="accion">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Ver citas</span>
+        </a>
+
+        <a href="/servicios_admin" class="accion">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Gestionar servicios</span>
+        </a>
+
+    </div>
+
+    <div class="panel">
+
+        <h3>Resumen del sistema</h3>
+
+        <p><strong>Usuarios:</strong> {{ total_usuarios }}</p>
+        <p><strong>Citas:</strong> {{ total_citas }}</p>
+        <p><strong>Servicios:</strong> 3</p>
+        <p><strong>Estado:</strong> En línea</p>
+
+    </div>
+
+    <div class="panel motorcare-panel">
+
+        <h2>MotorCare</h2>
+
+        <p>
+            Tu plataforma para la administración y mantenimiento de vehículos.
+        </p>
+
+        <a href="/servicios_admin" class="btn-panel">
+            Ver servicios
+        </a>
+
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% if login_admin %}
+<script>
+Swal.fire({
+    icon: "success",
+    title: "¡Bienvenido Administrador!",
+    text: "Has iniciado sesión correctamente en el panel de administración de MotorCare.",
+    confirmButtonText: "Continuar"
+});
+</script>
+{% endif %}
+
+    </main>
+
+</div>
+
+</body>
+</html>

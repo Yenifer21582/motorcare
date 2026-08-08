@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotorCare</title>
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo-dashboard">
+
+            <img src="{{ url_for('static', filename='img/motor care logo.png') }}" class="logo-menu">
+
+            <h2 class="logo-texto">
+                Motor<span>Care</span>
+            </h2>
+
+            <p>PANEL ADMINISTRADOR</p>
+
+        </div>
+
+        <nav>
+
+            <a href="/dashboard_admin">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="/usuarios">
+                <i class="fa-solid fa-users"></i>
+                Usuarios
+            </a>
+
+            <a href="/citas">
+                <i class="fa-solid fa-calendar-check"></i>
+                Citas
+            </a>
+
+            <a href="/servicios_admin" class="activo">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Servicios
+            </a>
+
+            <a href="/configuracion_admin">
+                <i class="fa-solid fa-gear"></i>
+                Configuración
+            </a>
+
+        </nav>
+
+        <div class="cerrar">
+
+            <a href="/cerrar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="contenido">
+
+        <h1>
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            Gestión de Servicios
+        </h1>
+
+        <p class="subtitulo-dashboard">
+            Consulta qué servicios han solicitado los clientes y cuántas veces se ha realizado cada uno.
+        </p>
+        <div class="cards-citas">
+
+    <div class="card-cita azul">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+
+        <div>
+            <h4>Total de servicios</h4>
+            <h2>6</h2>
+            <p>Servicios registrados.</p>
+        </div>
+    </div>
+
+    <div class="card-cita verde">
+    <i class="fa-solid fa-fire"></i>
+
+    <div>
+        <h4>Más solicitado</h4>
+        <h2>{{ mas_solicitado.servicio }}</h2>
+        <p>Servicio más pedido.</p>
+    </div>
+</div>
+
+    <div class="card-cita amarillo">
+        <i class="fa-solid fa-users"></i>
+
+        <div>
+            <h4>Clientes</h4>
+            <h2>{{ total_servicios }}</h2>
+            <p>Han solicitado servicios.</p>
+        </div>
+    </div>
+
+    <div class="card-cita rojo">
+        <i class="fa-solid fa-list-check"></i>
+
+        <div>
+            <h4>Solicitudes</h4>
+           <h2>9</h2>
+            <p>Servicios realizados.</p>
+        </div>
+    </div>
+
+</div>
+<div class="tabla-contenedor">
+
+    <table class="tabla-usuarios">
+
+        <thead>
+
+            <tr>
+                <th>Servicio</th>
+                <th>Clientes</th>
+                <th>Cantidad</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+{% for fila in datos %}
+
+<tr>
+
+    <td>{{ fila.servicio }}</td>
+
+    <td>{{ fila.clientes }}</td>
+
+    <td>{{ fila.cantidad }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+    </table>
+
+</div>

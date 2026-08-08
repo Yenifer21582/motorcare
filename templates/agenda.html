@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotorCare</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo-dashboard">
+
+            <img src="{{ url_for('static', filename='img/motor care logo.png') }}" class="logo-menu">
+
+            <h2 class="logo-texto">
+                Motor<span>Care</span>
+            </h2>
+
+            <p>MANTENIMIENTO PREVENTIVO</p>
+
+        </div>
+
+        <nav>
+<a href="/dashboard">
+        <i class="fa-solid fa-house"></i>
+        Inicio
+    </a>
+
+    <a href="/servicios">
+        <i class="fa-solid fa-car"></i>
+        Servicios
+    </a>
+
+    <a href="/tipos-servicio">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        Tipos de vehiculo
+    </a>
+<a href="/agenda" class="activo">
+        <i class="fa-solid fa-calendar"></i>
+        Agenda tu cita
+    </a>
+
+    <a href="/consejos">
+        <i class="fa-solid fa-lightbulb"></i>
+        Consejos
+    </a>
+
+</nav>
+
+        <div class="cerrar">
+
+            <a href="/cerrar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="contenido">
+
+</div>
+<section class="agenda">
+
+    <h1>Agenda tu cita</h1>
+
+    <p class="subtitulo-agenda">
+        Completa el formulario para solicitar tu servicio.
+    </p>
+
+    <div class="agenda-contenedor">
+
+    <form action="/agenda" method="POST" class="form-agenda">
+
+        <div class="grupo">
+            <label>Nombre completo</label>
+            <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
+        </div>
+
+        <div class="grupo">
+            <label>Correo electrónico</label>
+            <input type="email" name="correo" placeholder="ejemplo@correo.com" required>
+        </div>
+
+        <div class="grupo">
+            <label>Teléfono</label>
+            <input type="text" name="telefono" placeholder="3001234567" required>
+        </div>
+
+        <div class="grupo">
+            <label>Tipo de vehículo</label>
+            <select name="vehiculo" required>
+                <option value="">Seleccione una opción</option>
+                <option>Carro</option>
+                <option>Moto</option>
+                <option>Motor fuera de borda</option>
+            </select>
+        </div>
+
+        <div class="grupo">
+            <label>Servicio</label>
+            <select name="servicio" required>
+                <option value="">Seleccione un servicio</option>
+                <option>Lavado de carros</option>
+                <option>Lavado de motos</option>
+                <option>Lavado de motores fuera de borda</option>
+                <option>Cambio de aceite</option>
+                <option>Cambio de filtros</option>
+                <option>Revisión de frenos</option>
+            </select>
+        </div>
+
+        <div class="grupo">
+            <label>Fecha</label>
+            <input type="date" name="fecha" required>
+        </div>
+
+        <div class="grupo">
+            <label>Hora</label>
+            <input type="time" name="hora" required>
+        </div>
+
+        <div class="grupo">
+            <label>Observaciones</label>
+            <textarea name="observaciones" rows="4" placeholder="Escribe aquí alguna observación..."></textarea>
+        </div>
+
+        <button type="submit">Agendar cita</button>
+
+    </form>
+
+    <div class="resumen-cita">
+
+    <div class="info-cita">
+
+    <i class="fa-solid fa-calendar-check icono-info"></i>
+
+    <h2>Programa tu cita y asegura el rendimiento de tu vehículo</h2>
+
+    <p>
+        El mantenimiento preventivo ayuda a prolongar la vida útil de tu vehículo y evita reparaciones costosas.
+    </p>
+
+    <div class="lista-beneficios">
+
+        <div>
+            <i class="fa-solid fa-circle-check"></i>
+            Atención profesional
+        </div>
+
+        <div>
+            <i class="fa-solid fa-circle-check"></i>
+            Técnicos especializados
+        </div>
+
+        <div>
+            <i class="fa-solid fa-circle-check"></i>
+            Servicio confiable
+        </div>
+
+        <div>
+            <i class="fa-solid fa-circle-check"></i>
+            Agenda rápida y sencilla
+        </div>
+
+    </div>
+
+    <div class="recordatorio">
+
+        <i class="fa-solid fa-clock"></i>
+
+        <span>Recuerda llegar 10 minutos antes de tu cita.</span>
+
+    </div>
+
+</div>
+
+</div>
+
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</div>
+</div> 
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% if cita_guardada %}
+<script>
+Swal.fire({
+    icon: "success",
+    title: "¡Cita agendada con éxito!",
+    html: `
+        <b>Vehículo:</b> {{ vehiculo }}<br><br>
+        <b>Servicio:</b> {{ servicio }}<br><br>
+        <b>Fecha:</b> {{ fecha }}<br><br>
+        <b>Hora:</b> {{ hora }}
+    `,
+    confirmButtonText: "Aceptar"
+});
+</script>
+{% endif %}
+</body>
+</html>

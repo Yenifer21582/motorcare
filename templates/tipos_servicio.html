@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotorCare</title>
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png.png') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="logo-dashboard">
+
+            <img src="{{ url_for('static', filename='img/motor care logo.png') }}" class="logo-menu">
+
+            <h2 class="logo-texto">
+                Motor<span>Care</span>
+            </h2>
+
+            <p>MANTENIMIENTO PREVENTIVO</p>
+
+        </div>
+
+        <nav>
+
+            <a href="/dashboard">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="/servicios">
+                <i class="fa-solid fa-car"></i>
+                Servicios
+            </a>
+
+            <a href="/tipos-servicio" class="activo">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Tipo de vehículo
+            </a>
+
+            <a href="/agenda">
+                <i class="fa-solid fa-calendar"></i>
+                Agenda tu cita
+            </a>
+
+            <a href="/consejos">
+                <i class="fa-solid fa-lightbulb"></i>
+                Consejos
+            </a>
+
+        </nav>
+
+        <div class="cerrar">
+
+            <a href="/cerrar">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Cerrar sesión
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="contenido">
+
+        <section class="servicios">
+
+            <h1>
+                <i class="fa-solid fa-car-side"></i>
+                Tipo de vehículo
+            </h1>
+
+            <p class="subtitulo-servicios">
+                Conoce los vehículos para los cuales ofrecemos mantenimiento preventivo.
+            </p>
+            <div class="bloque-vehiculo">
+
+    <div class="icono-vehiculo">
+        <i class="fa-solid fa-car"></i>
+    </div>
+
+    <div class="texto-vehiculo">
+
+        <h2>Carro</h2>
+
+        <p>
+            Incluye cambio de aceite, revisión de frenos, filtros,
+            suspensión y mantenimiento preventivo para mantener tu
+            vehículo en óptimas condiciones.
+        </p>
+
+        <ul>
+            <li>✔ Mejor rendimiento.</li>
+            <li>✔ Mayor seguridad.</li>
+            <li>✔ Previene fallas costosas.</li>
+        </ul>
+
+    </div>
+
+    <div class="imagen-vehiculo">
+        <img src="{{ url_for('static', filename='img/carro 4.jpg') }}">
+    </div>
+
+</div>
+
+<div class="bloque-vehiculo">
+
+    <div class="icono-vehiculo">
+        <i class="fa-solid fa-motorcycle"></i>
+    </div>
+
+    <div class="texto-vehiculo">
+
+        <h2>Moto</h2>
+
+        <p>
+            Incluye cambio de aceite, revisión de frenos, cadena,
+            llantas y mantenimiento preventivo para un mejor desempeño.
+        </p>
+
+        <ul>
+            <li>✔ Mejor rendimiento.</li>
+            <li>✔ Mayor seguridad.</li>
+            <li>✔ Mayor vida útil.</li>
+        </ul>
+
+    </div>
+
+    <div class="imagen-vehiculo">
+        <img src="{{ url_for('static', filename='img/nmax 1.jpg') }}">
+    </div>
+
+</div>
+
+<div class="bloque-vehiculo">
+
+    <div class="icono-vehiculo">
+        <i class="fa-solid fa-ship"></i>
+    </div>
+
+    <div class="texto-vehiculo">
+
+        <h2>Motor fuera de borda</h2>
+
+        <p>
+            Incluye limpieza del sistema, cambio de aceite, revisión de la hélice y mantenimiento preventivo para un funcionamiento confiable.
+        </p>
+
+        <ul>
+            <li>✔ Mejor rendimiento en el agua.</li>
+            <li>✔ Mayor durabilidad.</li>
+            <li>✔ Previene la corrosión.</li>
+        </ul>
+
+    </div>
+
+    <div class="imagen-vehiculo">
+        <img src="{{ url_for('static', filename='img/Motor negro1.png') }}">
+    </div>
+
+</div>
+
+        </section>
+
+    </div>
+
+</div>
+
+</body>
+</html>
