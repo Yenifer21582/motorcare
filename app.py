@@ -28,7 +28,8 @@ conexion = mysql.connector.connect(
     user=os.environ.get("DB_USER", "root"),
     password=os.environ.get("DB_PASSWORD", ""),
     database=os.environ.get("DB_NAME", "motorcare"),
-    port=int(os.environ.get("DB_PORT", 3306))
+    port=int(os.environ.get("DB_PORT", 3306)),
+    ssl_ca=os.path.join(os.path.dirname(__file__), "ca.pem")
 )
 
 # ===========================
